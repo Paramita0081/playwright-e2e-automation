@@ -1,0 +1,21 @@
+{
+  "name": "live",
+  "version": "1.0.0",
+  "description": "Playwright with MCP Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Playwright",
+    "Playwright",
+    "MCP",
+    "server"
+  ],
+  "author": "Paramita Maity",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.1"
+  }
+}
