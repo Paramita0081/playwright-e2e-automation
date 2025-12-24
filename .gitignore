@@ -9,7 +9,11 @@ node_modules/
 /logs/
 /utils/
 /resources/
-/playwright-e2e-tests
+/playwright-e2e-tests/
+/data/
+/.features-gen/
+/.gitignore
+
 
 
 
