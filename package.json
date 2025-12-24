@@ -8,7 +8,7 @@
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
-    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts --headed --project=chromium"
+    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts --project=chromium"
   },
   "keywords": [
     "Playwright",
