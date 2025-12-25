@@ -5,13 +5,13 @@ on:
   pull_request:
     branches: [main, master]
 
-permissions:
-      contents: read
-      issues: write
+#permissions:
+   #   contents: read
+    #  issues: write
 
 jobs:
   test:
-    #timeout-minutes: 60
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     
     env:
@@ -47,15 +47,6 @@ jobs:
           SAFE_BRANCH=$(echo "$RAW_BRANCH" | tr '/: ' '-' | tr -cd '[:alnum:]-_.')
           echo "Sanitized branch name: $SAFE_BRANCH"
           echo "safe_branch=$SAFE_BRANCH" >> $GITHUB_OUTPUT
-
-
-      - name: Deploy Cucumber HTML report to GitHub Pages
-        if: ${{ success() }}
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUBTOKEN }}
-          publish_dir: ./cucumber-html-report
-          destination_dir: cucumber-report/${{ steps.sanitize.outputs.safe_branch }}
 
       - name: Log deployed Cucumber report URL
         if: success()
