@@ -33,10 +33,6 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Create --title "Issue title" --body "Issue body"
-        run: |
-          gh issue --repo ${{ github.repository }} 
-
       - name: Run Playwright tests
         run: npm run local:test
 
@@ -51,7 +47,7 @@ jobs:
       - name: Log deployed Cucumber report URL
         if: success()
         run: |
-          echo "✅ Cucumber report deployed at:"
+          echo "Cucumber report deployed at:"
           echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/main/cucumber-report/${{ steps.sanitize.outputs.safe_branch }}/index.html"
           
 
