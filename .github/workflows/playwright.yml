@@ -48,7 +48,7 @@ jobs:
         if: success()
         run: |
           echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/main/cucumber-report/${{ steps.sanitize.outputs.safe_branch }}/index.html"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/main/cucumber-report/index.html"
           
 
         #uses: actions/upload-artifact@v4
