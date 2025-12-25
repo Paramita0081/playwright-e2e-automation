@@ -16,7 +16,6 @@ jobs:
     
     env:
       RUNNER: ${{secrets.RUNNER}}
-      GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
 
     steps:
       - name: Checkout repository
