@@ -4,14 +4,16 @@ on:
     branches: [main]
   pull_request:
     branches: [main, master]
+
+permissions:
+      contents: read
+      issues: write
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
-      
+    
     env:
       RUNNER: ${{secrets.RUNNER}}
       GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
@@ -49,18 +51,18 @@ jobs:
 
 
       - name: Deploy Cucumber HTML report to GitHub Pages
-        if: ${{ !cancelled() }}
+        if: ${{ success() }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUBTOKEN }}
           publish_dir: ./cucumber-html-report
-          destination_dir: cucumber-reports/${{ steps.sanitize.outputs.safe_branch }}
+          destination_dir: cucumber-report/${{ steps.sanitize.outputs.safe_branch }}
 
       - name: Log deployed Cucumber report URL
         if: success()
         run: |
           echo "✅ Cucumber report deployed at:"
-          echo "https://testroverautomation.github.io/Playwright_Learning/cucumber-reports/${{ steps.sanitize.outputs.safe_branch }}/index.html"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/main/cucumber-report/${{ steps.sanitize.outputs.safe_branch }}/index.html"
           
 
         #uses: actions/upload-artifact@v4
