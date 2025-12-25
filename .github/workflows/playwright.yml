@@ -8,8 +8,14 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      
     env:
       RUNNER: ${{secrets.RUNNER}}
+      GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -25,6 +31,10 @@ jobs:
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+
+      - name: Create --title "Issue title" --body "Issue body"
+        run: |
+          gh issue --repo ${{ github.repository }} 
 
       - name: Run Playwright tests
         run: npm run local:test
