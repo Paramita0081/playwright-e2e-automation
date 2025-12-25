@@ -1,0 +1,58 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "multiple-window-handling-functionality;verify-handling-of-multiple-browser-windows",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verify handling of multiple browser windows",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to home page",
+            "result": {
+              "status": "passed",
+              "duration": 3820000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I click on \"Multiple Windows\" link to open a new window",
+            "result": {
+              "status": "passed",
+              "duration": 442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "Handle new window and assert header",
+            "result": {
+              "status": "passed",
+              "duration": 113000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "chromium-›-multiple-window-handling-functionality",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Multiple Window Handling Functionality",
+    "tags": [],
+    "uri": "tests\\features\\MultipleWindow.feature"
+  }
+]
