@@ -44,6 +44,15 @@ jobs:
           echo "Sanitized branch name: $SAFE_BRANCH"
           echo "safe_branch=$SAFE_BRANCH" >> $GITHUB_OUTPUT
 
+
+      - name: Deploy Cucumber HTML report to GitHub Pages
+        if: ${{ success() }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+         github_token: ${{ secrets.GITHUBTOKEN }}
+         publish_dir: ./cucumber-html-report
+         destination_dir: ${{ steps.sanitize.outputs.safe_branch }}/cucumber-report
+
       - name: Log deployed Cucumber report URL
         if: success()
         run: |
