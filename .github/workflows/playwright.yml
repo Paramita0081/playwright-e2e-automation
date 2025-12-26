@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # The directory containing the generated HTML report files to upload
-          path: "./cucumber-html-report"
+          path: "./test-results"
 
       - name: Deploy Cucumber HTML report to GitHub Pages
         if: ${{ success() }}
