@@ -39,6 +39,7 @@ jobs:
 
       - name: Install Cucumber 
         run: npm i @cucumber/cucumber -D
+            mkdir -p ./cucumber-html-report
         
       - name: Install ts-node
         run: npm i ts-node -D 
@@ -56,9 +57,8 @@ jobs:
 
       - name: Generate HTML report from JSON
         run: |
-          mkdir -p ./cucumber-html-report
           echo "Placeholder for generating HTML report using a reporter tool"
-          echo '<h1>Cucumber Report Placeholder</h1>' > ./cucumber-html-report/index.html
+          echo '<h1>Cucumber Report Placeholder</h1>' > ./cucumber-html-report/cucumber-report.html
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -74,4 +74,4 @@ jobs:
         if: success()
         run: |
           echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/cucumber-html-report/cucumber-report.html"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/cucumber-html-report/cucumber-report.html"
