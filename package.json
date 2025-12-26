@@ -8,8 +8,8 @@
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
-    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts --project=chromium",
-    "report:bdd": "npx ts-node generateReport.ts"
+    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts && npx generate-report",
+    "generate-report": "ts-node tests/generateReport.ts"
   },
   "keywords": [
     "Playwright",
@@ -23,15 +23,18 @@
     "@cucumber/cucumber": "^12.4.0",
     "@cucumber/pretty-formatter": "^2.4.1",
     "@playwright/test": "^1.57.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^25.0.1",
     "chalk": "^5.6.2",
     "dotenv": "^17.2.3",
+    "fs-extra": "^11.3.3",
     "multiple-cucumber-html-reporter": "^3.9.3",
     "playwright-bdd": "^8.4.2",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
   },
   "dependencies": {
-    "typescript": "^5.9.3",
-     "@cucumber/cucumber-json-converter": "^0.1.0"
+    "@cucumber/cucumber-json-converter": "^0.1.0",
+    "typescript": "^5.9.3"
   }
 }

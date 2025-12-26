@@ -16,7 +16,7 @@
             "name": "user navigates to home page",
             "result": {
               "status": "passed",
-              "duration": 3820000000
+              "duration": 4264000000
             }
           },
           {
@@ -26,7 +26,7 @@
             "name": "I click on \"Multiple Windows\" link to open a new window",
             "result": {
               "status": "passed",
-              "duration": 442000000
+              "duration": 451000000
             }
           },
           {
@@ -36,7 +36,7 @@
             "name": "Handle new window and assert header",
             "result": {
               "status": "passed",
-              "duration": 113000000
+              "duration": 120000000
             }
           }
         ],
