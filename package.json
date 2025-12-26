@@ -8,7 +8,7 @@
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
-    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts && npx generate-report",
+    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts",
     "generate-report": "ts-node tests/generateReport.ts"
   },
   "keywords": [
