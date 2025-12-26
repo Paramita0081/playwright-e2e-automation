@@ -57,13 +57,13 @@ jobs:
       - name: Generate HTML report from JSON
         run: |
           echo "Placeholder for generating HTML report using a reporter tool"
-          echo '<h1>Cucumber Report Placeholder</h1>' > cucumber-html-report/cucumber-report.html
+          echo '<h1>Cucumber Report Placeholder</h1>' > playwright-report/index.html
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # The directory containing the generated HTML report files to upload
-          path: "cucumber-html-report"
+          path: "playwright-report"
 
       - name: Deploy Cucumber HTML report to GitHub Pages
         if: ${{ success() }}
@@ -73,4 +73,4 @@ jobs:
         if: success()
         run: |
           echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/cucumber-html-report/cucumber-report.html"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/playwright-report/index.html"
