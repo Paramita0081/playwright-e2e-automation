@@ -46,7 +46,7 @@ jobs:
       - name: Generate HTML report from JSON
         run: |
           echo "Placeholder for generating HTML report using a reporter tool"
-          mkdir -p target/cucumber-html-reports
+          mkdir -p ./cucumber-html-report
           echo '<h1>Cucumber Report Placeholder</h1>' > ./cucumber-html-report/index.html  
           
       - name: Upload pages artifact
