@@ -6,9 +6,8 @@ on:
     branches: [main, master]
 
 permissions:
-      contents: read
-      issues: write
-
+      contents: write
+      
 jobs:
   test:
     timeout-minutes: 60
