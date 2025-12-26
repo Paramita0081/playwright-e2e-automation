@@ -50,8 +50,7 @@ jobs:
 
       - name: Generate HTML report from JSON
         run: |
-         directories_to_create:
-         ./cucumber-html-report
+          mkdir -p ./cucumber-html-report
           echo "Placeholder for generating HTML report using a reporter tool"
           echo '<h1>Cucumber Report Placeholder</h1>' > ./cucumber-html-report/index.html
 
