@@ -37,6 +37,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Install Cucumber 
+        run: npm i @cucumber/cucumber -D
+        
+      - name: Install ts-node
+        run: npm i ts-node -D 
+        
       - name: Run Playwright tests
         run: npm run local:test
 
