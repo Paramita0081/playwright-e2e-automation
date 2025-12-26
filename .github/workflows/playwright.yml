@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # The directory containing the generated HTML report files to upload
-          path: "./test-results"
+          path: "./cucumber-html-report"
 
       - name: Deploy Cucumber HTML report to GitHub Pages
         if: ${{ success() }}
@@ -74,4 +74,4 @@ jobs:
         if: success()
         run: |
           echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/cucumber-report/index.html"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/tree/cucumber-html-report/cucumber-report.html"

@@ -19,7 +19,7 @@ module.exports ={
             "ts-node/register"
         ],
         format: [
-            "html:playwright-report/cucumber-report.html"
+            "html:cucumber-html-report/cucumber-report.html"
         ]
     }
 }
