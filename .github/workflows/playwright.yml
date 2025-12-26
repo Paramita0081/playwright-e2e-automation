@@ -39,8 +39,7 @@ jobs:
 
       - name: Install Cucumber 
         run: npm i @cucumber/cucumber -D
-            mkdir -p ./cucumber-html-report
-        
+            
       - name: Install ts-node
         run: npm i ts-node -D 
         
@@ -58,13 +57,13 @@ jobs:
       - name: Generate HTML report from JSON
         run: |
           echo "Placeholder for generating HTML report using a reporter tool"
-          echo '<h1>Cucumber Report Placeholder</h1>' > ./cucumber-html-report/cucumber-report.html
+          echo '<h1>Cucumber Report Placeholder</h1>' > cucumber-html-report/cucumber-report.html
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # The directory containing the generated HTML report files to upload
-          path: "./cucumber-html-report"
+          path: "cucumber-html-report"
 
       - name: Deploy Cucumber HTML report to GitHub Pages
         if: ${{ success() }}
