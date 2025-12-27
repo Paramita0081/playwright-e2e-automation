@@ -7,6 +7,7 @@ test.describe('Multiple Window Handling Functionality', () => {
     await Given('user navigates to home page', null, { multiWindowPage }); 
     await When('I click on "Multiple Windows" link to open a new window', null, { multiWindowPage }); 
     await Then('Handle new window and assert header', null, { multiWindowPage }); 
+    await Then('Assert the header on the first new window', null, { multiWindowPage }); 
   });
 
 });
@@ -20,5 +21,5 @@ test.use({
 });
 
 const bddFileData = [ // bdd-data-start
-  {"pwTestLine":6,"pickleLine":4,"tags":["@regression"],"steps":[{"pwStepLine":7,"gherkinStepLine":5,"keywordType":"Context","textWithKeyword":"Given user navigates to home page","stepMatchArguments":[]},{"pwStepLine":8,"gherkinStepLine":6,"keywordType":"Action","textWithKeyword":"When I click on \"Multiple Windows\" link to open a new window","stepMatchArguments":[]},{"pwStepLine":9,"gherkinStepLine":7,"keywordType":"Outcome","textWithKeyword":"Then Handle new window and assert header","stepMatchArguments":[]}]},
+  {"pwTestLine":6,"pickleLine":4,"tags":["@regression"],"steps":[{"pwStepLine":7,"gherkinStepLine":5,"keywordType":"Context","textWithKeyword":"Given user navigates to home page","stepMatchArguments":[]},{"pwStepLine":8,"gherkinStepLine":6,"keywordType":"Action","textWithKeyword":"When I click on \"Multiple Windows\" link to open a new window","stepMatchArguments":[]},{"pwStepLine":9,"gherkinStepLine":7,"keywordType":"Outcome","textWithKeyword":"Then Handle new window and assert header","stepMatchArguments":[]},{"pwStepLine":10,"gherkinStepLine":8,"keywordType":"Outcome","textWithKeyword":"Then Assert the header on the first new window","stepMatchArguments":[]}]},
 ]; // bdd-data-end

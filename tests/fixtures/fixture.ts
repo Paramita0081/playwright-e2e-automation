@@ -3,7 +3,7 @@ import * as Pages from "../pageobjects/index";
 import { Page } from "playwright-core";
 
 type PageFixtures = {
-  multiWindowPage: Pages.MultiWindowPage;
+  multiWindowPage: Pages.MultiWindowPage
 };
 
 const createTestFunction =
@@ -26,5 +26,5 @@ export const test = base.extend<PageFixtures>({
 });
 */
 
-
+//export default {test};
 export const bdd = createBdd(test);

@@ -1,2 +1,2 @@
-export * from "../pageobjects/multiWindow.page";
+export * from "../pageobjects/multiWindoPage";
 export * from "../pageobjects/BasePage";

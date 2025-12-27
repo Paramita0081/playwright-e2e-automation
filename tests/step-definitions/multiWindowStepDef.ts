@@ -20,9 +20,9 @@ Then('Handle new window and assert header', async ({multiWindowPage})=> {
     await multiWindowPage.clickHereLink.click();
 });
 
-/*Then('Assert the header on the first new window', async ({multiWindowPage})=> {
-   await expect(multiWindowPage.verifyHeaderText("Opening a new window")).toBe(true);
-});*/
+Then('Assert the header on the first new window', async ({multiWindowPage})=> {
+   await multiWindowPage.verifyHeaderText();
+});
 
 /*Then('close all opened windows',async ({multiWindowPage})=> {
     await multiWindowPage.closeBrowser();
