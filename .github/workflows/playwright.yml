@@ -54,11 +54,6 @@ jobs:
           echo "Sanitized branch name: $SAFE_BRANCH"
           echo "safe_branch=$SAFE_BRANCH" >> $GITHUB_OUTPUT
 
-      - name: Generate HTML report from JSON
-        run: |
-          echo "Placeholder for generating HTML report using a reporter tool"
-          echo '<h1>Cucumber Report Placeholder</h1>' > test-results
-
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         if: always()
