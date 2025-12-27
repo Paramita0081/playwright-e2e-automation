@@ -60,7 +60,7 @@ jobs:
         with:
           # The directory containing the generated HTML report files to upload
           name: Report
-          path: "test-results"
+          path: "test-results/index.html"
           retention-days : 2
 
       - name: Deploy Cucumber HTML report to GitHub Pages
@@ -71,4 +71,4 @@ jobs:
         if: success()
         run: |
           echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/test-results"
+          echo "https://github.com/Paramita0081/playwright-e2e-automation/test-results/index.html"
