@@ -9,13 +9,11 @@
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
     "local:test": "npx bddgen && npx playwright test --config playwright.config.ts",
-    "generate-report": "ts-node tests/generateReport.ts"
+    "generateReport": "ts-node tests/generatereport.ts"
   },
   "keywords": [
     "Playwright",
-    "Playwright",
-    "MCP",
-    "server"
+    "MCP -server"
   ],
   "author": "Paramita Maity",
   "license": "ISC",
@@ -31,7 +29,8 @@
     "multiple-cucumber-html-reporter": "^3.9.3",
     "playwright-bdd": "^8.4.2",
     "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "winston": "^3.8.2"
   },
   "dependencies": {
     "@cucumber/cucumber-json-converter": "^0.1.0",

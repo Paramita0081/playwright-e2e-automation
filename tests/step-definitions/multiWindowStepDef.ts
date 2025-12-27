@@ -1,14 +1,15 @@
 import {expect,chromium,Browser} from '@playwright/test';
 import { WebActions } from '../../utils/WebActions';
-import { log } from '../helpers/logger';
+import { log } from "../helpers/logger";
 import { test } from '../fixtures/fixture';
 import { createBdd } from 'playwright-bdd'
 
 const {Given, When, Then} = createBdd(test);
-let webActions: WebActions;
+
 
 
 Given('user navigates to home page',async ({multiWindowPage})=> {
+   // log.logger.info("Navigated to the application");
     await multiWindowPage.navigateToHomePage();
 });
 

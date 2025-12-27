@@ -1,7 +1,7 @@
 import {type Locator,chromium,Page,Browser,expect,} from "@playwright/test";
-import { WebActions } from "../../utils/WebActions";
 import { BasePage } from "./BasePage";
 import pageHelper from "../helpers/pw-helper";
+import { log } from "../helpers/logger";
 
 let browser: Browser;
 
@@ -22,18 +22,11 @@ export class MultiWindowPage extends BasePage {
 
   public async navigateToHomePage() {
     await this.page.goto("https://the-internet.herokuapp.com/");
-    await pageHelper.takeFullPageScreenshot(
-      this.page,
-      "Multiwindow first Page"
-    );
+    await pageHelper.takeFullPageScreenshot(this.page, "Multiwindow first Page");
   }
 
   //Assert Text
   public async verifyHeaderText() {
     await expect(this.page.locator("h3")).toContainText("Opening a new window");
   }
-
-  /*public async closeBrowser(){
-    await browser.close();
-   }*/
 }

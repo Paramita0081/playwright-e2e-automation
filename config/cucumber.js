@@ -1,25 +1,27 @@
-module.exports ={
+module.exports = {
     default: {
-        paths: ["tests/features/**/*.feature"], 
-        require: ["tests/step-definitions/*.ts", "tests/fixtures/*.ts"],
-        importTestFrom: './fixture.ts',
-        tags: '@regression',
-        dryRun: false,
-        format: [
-            "progress-bar",
-            "summary",
-           // "json:reports/cucumber-report.json", // Generates a JSON report
-            //"html:reports/cucumber-report.html"
-        ],
         formatOptions: {
-            colorsEnabled: true,
             snippetInterface: "async-await"
         },
+        paths: [
+            "tests/features/**/*.feature"
+        ],
+        publishQuiet: true,
+        dryRun: false,
+        require: [
+            "tests/step-definitions/*.ts",
+            "tests/fixtures/*.ts"
+        ],
         requireModule: [
             "ts-node/register"
         ],
         format: [
-            "html:playwright-report/index.html"
-        ]
+            "progress-bar",
+            "html:test-results/cucumber-report.html",
+            "json:test-results/cucumber-report.json"
+            
+        ],
+        parallel: 1
     }
+    
 }
