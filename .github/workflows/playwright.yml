@@ -54,13 +54,18 @@ jobs:
           echo "Sanitized branch name: $SAFE_BRANCH"
           echo "safe_branch=$SAFE_BRANCH" >> $GITHUB_OUTPUT
 
+      - name: Prepare Pages Artifact Directory
+        run: |
+          mkdir -p github-pages-artifact
+          cp "test-results/index.html" "github-pages-artifact/index.html"
+
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         if: always()
         with:
           # The directory containing the generated HTML report files to upload
           name: Report
-          path: "test-results/index.html"
+          path: "github-pages-artifact/"
           retention-days : 2
 
       - name: Deploy Cucumber HTML report to GitHub Pages
