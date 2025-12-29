@@ -1,28 +1,31 @@
-import {expect,chromium,Browser} from '@playwright/test';
-import { WebActions } from '../../utils/WebActions';
-import { log } from "../helpers/logger";
-import { test } from '../fixtures/fixture';
-import { createBdd } from 'playwright-bdd'
+import { Given, When, Then,setDefaultTimeout } from "@cucumber/cucumber";
+import { fixture } from "../fixtures/fixture";
+import * as Pages from "../pages/index";
+//mport { defineConfig } from "@playwright/test";
 
-const {Given, When, Then} = createBdd(test);
-
+//baseURL: process.env.BASEURL;
 
 
-Given('user navigates to home page',async ({multiWindowPage})=> {
-   // log.logger.info("Navigated to the application");
-    await multiWindowPage.navigateToHomePage();
+setDefaultTimeout(60 * 1000 * 2)
+
+let multiWinPage: Pages.MultiWindowPage;
+
+Given('user navigates to page', async function()  {
+      await fixture.page.goto(process.env.BASEURL);
+      fixture.logger.info("Navigated to the application");
+ });
+
+When('I click on "Multiple Windows" link to open a new window', async function () {
+    multiWinPage = new Pages.MultiWindowPage(fixture.page);
+    await multiWinPage.multipleWindowsLink.click();
 });
 
-When('I click on "Multiple Windows" link to open a new window', async ({multiWindowPage})=> {
-    await multiWindowPage.multipleWindowsLink.click()
+Then('Handle new window and assert header', async function () {
+    await multiWinPage.clickHereLink.click();
 });
 
-Then('Handle new window and assert header', async ({multiWindowPage})=> {
-    await multiWindowPage.clickHereLink.click();
-});
-
-Then('Assert the header on the first new window', async ({multiWindowPage})=> {
-   await multiWindowPage.verifyHeaderText();
+Then('Assert the header on the first new window', async function () {
+   await multiWinPage.verifyHeaderText();
 });
 
 /*Then('close all opened windows',async ({multiWindowPage})=> {

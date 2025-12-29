@@ -1,8 +1,18 @@
-import { test as base, createBdd } from "playwright-bdd";
-import * as Pages from "../pageobjects/index";
-import { Page } from "playwright-core";
+import { Page } from "@playwright/test";
+import { Logger } from "winston";
+//import { test as base} from "@playwright/test";
+//import { test as base, createBdd } from "playwright-bdd";
+//import * as Pages from "../../pageobjects/index";
 
-type PageFixtures = {
+
+export const fixture = {
+    // @ts-ignore
+    page: undefined as Page,
+    // @ts-ignore
+    logger: undefined as Logger
+}
+
+/*type PageFixtures = {
   multiWindowPage: Pages.MultiWindowPage;
 };
 
@@ -11,20 +21,10 @@ const createTestFunction =
   (
     { page }: { page: Page },
     use: (fixture: InstanceType<T>) => Promise<void>
-  ) =>
-    use(new PageClass(page));
+  ) =>use(new PageClass(page));
 
 export const test = base.extend<PageFixtures>({
-  multiWindowPage: createTestFunction(Pages.MultiWindowPage),
-});
+  multiWindowPage: createTestFunction(Pages.MultiWindowPage)
 
-/*export const test = base.extend<PageFixtures>({
- multiWindowPage: async ({ page }, use) => {
-   const multiWindowPageObj = new Pages.MultiWindowPage(page);
-   await use(multiWindowPageObj);
-   }
-});
-*/
+});*/
 
-//export default {test};
-export const bdd = createBdd(test);

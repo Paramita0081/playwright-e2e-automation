@@ -32,8 +32,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   
   reporter:[
-    ['html',{ outputFolder: 'test-results' }],
-     ['json', { outputFile: 'test-results/cucumber-report.json' }],
+    ['html']
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -43,6 +42,7 @@ export default defineConfig({
     timezoneId: "UTC",
     ignoreHTTPSErrors: true,
     //  navigationTimeout:30_000
+    //baseURL: process.env.BASEURL
   },
 
   /* Configure projects for major browsers */

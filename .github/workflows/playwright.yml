@@ -1,79 +1,27 @@
 name: Playwright Tests
 on:
   push:
-    branches: [main]
+    branches: [ main]
   pull_request:
-    branches: [main]
-
-permissions:
-  id-token: write
-
+    branches: [ main, master ]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    env:
-      RUNNER: ${{secrets.RUNNER}}
-      GITHUBTOKEN: ${{ secrets.GITHUBTOKEN }}
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: lts/*
-          cache: "npm"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Install Cucumber 
-        run: npm i @cucumber/cucumber -D
-            
-      - name: Install ts-node
-        run: npm i ts-node -D 
-        
-      - name: Run Playwright tests
-        run: npm run local:test
-
-      - name: Sanitize branch name
-        id: sanitize
-        run: |
-          RAW_BRANCH="${{ github.head_ref || github.ref_name }}"
-          SAFE_BRANCH=$(echo "$RAW_BRANCH" | tr '/: ' '-' | tr -cd '[:alnum:]-_.')
-          echo "Sanitized branch name: $SAFE_BRANCH"
-          echo "safe_branch=$SAFE_BRANCH" >> $GITHUB_OUTPUT
-
-      - name: Prepare Pages Artifact Directory
-        run: |
-          mkdir -p github-pages-artifact
-          cp "test-results/index.html" "github-pages-artifact/index.html"
-
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        if: always()
-        with:
-          # The directory containing the generated HTML report files to upload
-          name: Report
-          path: "github-pages-artifact/"
-          retention-days : 2
-
-      - name: Deploy Cucumber HTML report to GitHub Pages
-        if: ${{ success() }}
-        uses: actions/deploy-pages@v4
-
-      - name: Log deployed Cucumber report URL
-        if: success()
-        run: |
-          echo "Cucumber report deployed at:"
-          echo "https://github.com/Paramita0081/playwright-e2e-automation/test-results/index.html"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Cucumber tests
+      run: npm test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: Report
+        path: test-results
+        retention-days: 2

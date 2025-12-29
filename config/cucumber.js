@@ -1,5 +1,6 @@
 module.exports = {
     default: {
+        tags: process.env.npm_config_TAGS || "",
         formatOptions: {
             snippetInterface: "async-await"
         },
@@ -10,7 +11,8 @@ module.exports = {
         dryRun: false,
         require: [
             "tests/step-definitions/*.ts",
-            "tests/fixtures/*.ts"
+            "tests/fixtures/*.ts",
+            "tests/helpers/hooks.ts"              
         ],
         requireModule: [
             "ts-node/register"

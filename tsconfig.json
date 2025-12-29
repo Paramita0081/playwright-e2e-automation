@@ -1,13 +1,13 @@
  {
     "compilerOptions": {
-        "target": "ES2020",
-        "module": "CommonJS",
-        "strict": false,
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "noImplicitAny": false,
-        "moduleResolution": "node"
-    },
-    "include": ["tests/**/*", "tests/**/*.ts","tests/fixtures/*.ts"],
-    "exclude": ["node_modules",".vscode"]
+        "lib": [
+            "es2021"
+        ],
+        "typeRoots": [
+            "./node_modules/@types",
+            "tests/helper/types"
+        ],
+        "resolveJsonModule": true
+    }
+        
 }

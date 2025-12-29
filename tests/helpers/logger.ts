@@ -1,8 +1,17 @@
-import { Page } from "@playwright/test";
-import { Logger } from "winston";
+import { transports, format } from "winston";
 
-export const log = {
-    // @ts-ignore
-    page: undefined as Page,
-    logger: undefined as Logger
-}
+export function options(scenarioName: string) {
+    return {
+        transports: [
+            new transports.File({
+                filename: `test-results/logs/${scenarioName}/log.log`,
+                level: 'info',
+                format: format.combine(
+                    format.timestamp({ format: 'MMM-DD-YYYY HH:mm:ss' }),
+                    format.align(),
+                    format.printf(info => `${info.level}: ${[info.timestamp]}: ${info.message}`)
+                )
+            }),
+        ]
+    }
+};

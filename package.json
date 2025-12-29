@@ -4,11 +4,11 @@
   "description": "Playwright with MCP Server",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --config config/cucumber.js",
+    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js",
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
-    "local:test": "npx bddgen && npx playwright test --config playwright.config.ts",
+    "local:test": "npx playwright test --config playwright.config.ts",
     "generateReport": "ts-node tests/generatereport.ts"
   },
   "keywords": [
@@ -18,7 +18,7 @@
   "author": "Paramita Maity",
   "license": "ISC",
   "devDependencies": {
-    "@cucumber/cucumber": "^12.4.0",
+    "@cucumber/cucumber": "^12.5.0",
     "@cucumber/pretty-formatter": "^2.4.1",
     "@playwright/test": "^1.57.0",
     "@types/fs-extra": "^11.0.4",
@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@cucumber/cucumber-json-converter": "^0.1.0",
+    "cross-env": "^10.1.0",
     "typescript": "^5.9.3"
   }
 }
