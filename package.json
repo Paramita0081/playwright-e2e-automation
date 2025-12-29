@@ -4,7 +4,7 @@
   "description": "Playwright with MCP Server",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js headless: true",
+    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js",
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
