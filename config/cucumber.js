@@ -19,8 +19,8 @@ module.exports = {
         ],
         format: [
             "progress-bar",
-            "html:test-results/cucumber-report.html",
-            "json:test-results/cucumber-report.json"
+           // "html:./test-results/reports/cucumber-report.html",
+            "json:./test-results/unit/data/cucumber-report.json"
             
         ],
         parallel: 1

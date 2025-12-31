@@ -1,10 +1,6 @@
 import { Given, When, Then,setDefaultTimeout } from "@cucumber/cucumber";
 import { fixture } from "../fixtures/fixture";
 import * as Pages from "../pages/index";
-//mport { defineConfig } from "@playwright/test";
-
-//baseURL: process.env.BASEURL;
-
 
 setDefaultTimeout(60 * 1000 * 2)
 
@@ -27,7 +23,3 @@ Then('Handle new window and assert header', async function () {
 Then('Assert the header on the first new window', async function () {
    await multiWinPage.verifyHeaderText();
 });
-
-/*Then('close all opened windows',async ({multiWindowPage})=> {
-    await multiWindowPage.closeBrowser();
-});*/

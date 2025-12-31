@@ -2,12 +2,11 @@ import { Page } from "@playwright/test";
 
 export default class BasePage{
 
-   protected page: Page;
-    constructor(page:Page){
+    constructor(protected page:Page){
     this.page=page;
     }
-}
-   /* async goto(url: string) {
+
+   async goto(url: string) {
         await this.page.goto(url);
     }
 
@@ -21,4 +20,4 @@ export default class BasePage{
         await Promise.all([ this.page.waitForNavigation(), this.page.click(link) ]);
     }
 
-}*/
+}

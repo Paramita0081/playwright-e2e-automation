@@ -4,13 +4,14 @@
   "description": "Playwright with MCP Server",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js",
+    "test": "cross-env ENV=prod cucumber-js --config=config/cucumber.js && node ./tests/generatereport.js",
     "start": "node index.js",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
     "local:test": "npx playwright test --config playwright.config.ts",
-    "generateReport": "ts-node tests/generatereport.ts"
-  },
+    "generateReport": "ts-node ./tests/generatereport.ts",
+    "report": "node ./tests/generatereport.js"
+  }, 
   "keywords": [
     "Playwright",
     "MCP -server"
