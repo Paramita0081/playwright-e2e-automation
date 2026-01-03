@@ -10,7 +10,8 @@
     "login": "npx playwright test tests/functional/login.spec.ts --headed",
     "local:test": "npx playwright test --config playwright.config.ts",
     "generateReport": "ts-node ./tests/generatereport.ts",
-    "report": "node ./tests/generatereport.js"
+    "report": "node ./tests/generatereport.js",
+    "ntest": "npx bddgen && npx playwright test --config playwright.config.ts --headed"
   }, 
   "keywords": [
     "Playwright",

@@ -1,5 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
-import { cucumberReporter, defineBddConfig } from "playwright-bdd";
+import {defineBddConfig } from "playwright-bdd";
 
 /**
  * Read environment variables from file.
@@ -13,8 +13,8 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });*/
  */
 
 const testDir = defineBddConfig({
-  features: "tests/features/**/*.feature",
-  steps: ["tests/step-definitions/*.ts", "tests/fixtures/*.ts"],
+  features: "tests/features/registerUser.feature",
+  steps: ["tests/step-definitions/registerUsersStepDef.ts", "tests/fixtures/*POMFixtures.ts"],
 });
 
 

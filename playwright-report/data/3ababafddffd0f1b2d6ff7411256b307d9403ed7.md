@@ -1,0 +1,73 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - button "Book Cart" [ref=e6] [cursor=pointer]:
+      - img [ref=e7]: book
+      - generic [ref=e8]: Book Cart
+    - combobox "search" [ref=e14]
+    - generic [ref=e15]:
+      - button [ref=e16] [cursor=pointer]:
+        - img [ref=e17]:
+          - text: shopping_cart
+          - generic: "0"
+      - button "Login" [ref=e20] [cursor=pointer]:
+        - generic [ref=e21]: Login
+      - link "Swagger icon Swagger" [ref=e24] [cursor=pointer]:
+        - /url: /swagger/index.html
+        - generic [ref=e25]:
+          - img "Swagger icon" [ref=e27]
+          - text: Swagger
+      - link " GitHub" [ref=e30] [cursor=pointer]:
+        - /url: https://github.com/AnkitSharma-007/bookcart
+        - generic [ref=e31]:
+          - generic [ref=e32]: 
+          - text: GitHub
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e41]: User Registration
+      - generic [ref=e42]:
+        - text: Already Registered?
+        - button "Login" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]: Login
+    - generic [ref=e48]:
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - text: First name
+          - generic [ref=e53]: "*"
+        - textbox "First name" [active] [ref=e55]: koushik
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - text: Last name
+          - generic [ref=e61]: "*"
+        - textbox "Last name" [ref=e63]:
+          - /placeholder: Last Name
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - text: User name
+          - generic [ref=e69]: "*"
+        - textbox "User name" [ref=e71]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - text: Password
+          - generic [ref=e77]: "*"
+        - textbox "Password" [ref=e79]
+        - img [ref=e81]: visibility_off
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - text: Confirm Password
+          - generic [ref=e87]: "*"
+        - textbox "Confirm Password" [ref=e89]
+        - img [ref=e91]: visibility_off
+      - text: "Gender:"
+      - radiogroup [ref=e93]:
+        - generic [ref=e95]:
+          - radio "Male" [ref=e98] [cursor=pointer]
+          - generic [ref=e101]: Male
+        - generic [ref=e103]:
+          - radio "Female" [ref=e106] [cursor=pointer]
+          - generic [ref=e109]: Female
+      - button "Register" [ref=e111] [cursor=pointer]:
+        - generic [ref=e112]: Register
+```

@@ -1,2 +1,2 @@
 export * from "../pages/multiwindowPage";
-export * from "../pages/BasePage";
+export * from "../pages/registerPage";

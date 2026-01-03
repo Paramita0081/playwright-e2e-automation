@@ -8,7 +8,8 @@ node_modules/
 /resources/
 /playwright-e2e-tests/
 /data/
-/.features-gen
+/.features-gen/
+.tmp/
 
 
 
